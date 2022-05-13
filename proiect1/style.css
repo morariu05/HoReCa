@@ -1,0 +1,25 @@
+.slidecontainer {
+  width: 90%; 
+}
+body  {
+  margin: 0; 
+  padding: 0;
+  background-color: #c1d7d7;
+}
+.row {
+  margin-left:20px;
+  margin-right:-5px;
+} 
+.column {
+  float: left;
+  width: 45%;
+  padding: 10px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  border: 3px solid #ddd;
+  margin-left: 100px;
+}
+
