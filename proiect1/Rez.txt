@@ -1,5 +1,0 @@
-Proiect 1:
-----------
-
-    cel putin 5 figuri geometrice realizate in SVG
-
