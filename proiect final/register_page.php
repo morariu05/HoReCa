@@ -1,91 +1,81 @@
 <?php
 	include('srv.php');
-	$profpic = "images/1.jpg";
+//	$profpic = "images/1.jpg";
 ?>
 <html>
 <head> 
-	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-	<title>Register</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Register</title>
   <style type="text/css"> 
     body  {
-	  font-family: Arial, sans-serif;
-      margin: 80px 0; 
+      margin: 0;
       padding: 0;
-	  background-image: url('<?php echo $profpic;?>');
+      background-color: #f5f5f5;
     }
     input {
-      background-color: #c2c2d6;
-      color: #3c5d5d;
-      padding: 13px 20px;
-      margin: 7px 0;
-      border: none;
-      cursor: pointer;
-      width: 85%;
+      margin: 5px 0;
     }
-    button {
-      background-color: #8585ad;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 70%;
+    .error {
+      color: red;
+      font-size: 15px;
     }
-	.error {
-		color: red;
-		font-size: 15px;
-	}
-	.obl {
-		color: red;
-		margin-left: 20px;
-	}
-
+    .form-signin {
+      max-width: 600px;
+      padding: 60px;
+    }
   </style>
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------- -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">To-Do List |</a>
+    <a class="navbar-brand" href="index.html">HoReCa Reviews |</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="login_page.php">Login</a>
+        </li>
+      </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="login_page.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
   </div>
 </nav>
 <!-- ---------------------------------------------------------------------------------------------------- -->
-
-	<center>
-	  <img src="images/user.png" height="150" width="150">
-	  <h2><font color="black">Register</font></h2><br> 
-	  <table border="1px solid" width="500">
-		<tr bgcolor=" #d1d1e0"><td>
-		<form action="register_page.php" method='post'><br>
-		  <center>
-		  <?php include('./errors.php'); ?>
-		   <p><b>Nume</b><br>
-			 <input type="text" name="first_name" size="40" maxlength="15" value="<?php echo $first_name;?>" required><span class="error"> * </span></p>
-		   <p><b>Prenume</b><br>
-			 <input type="text" name="last_name" size="40" maxlength="30" value="<?php echo $last_name;?>" required><span class="error"> * </span></p>
-		   <p><b>Adresa</b><br>
-			 <input type="text" name="address" size="40" maxlength="30" value="<?php echo $address;?>"></p>
-		   <p><b>Nr. de telefon</b><br>
-			 <input type="text" name="phone" size="40" maxlength="30" value="<?php echo $phone;?>"></p>
-		   <p><b>Adresa de email</b><br>
-			 <input type="email" name="email" size="40" maxlength="40" value="<?php echo $email;?>" required><span class="error"> * </span></p>
-		   <p><b>Parola</b><br>
-			 <input type="password" name="password" size="40" maxlength="30" required><span class="error"> * </span></p><br>
-		   <button type="submit" name="registerBtn">Register</button></a><br>
-			 <font color="red" size="2px"> * camp obligatoriu!</font>
-			 </center>
-		</form></td></tr>
-	  </table><br>
-	  <font size="2.5px" color="#f2e6ff">Ai deja un cont?</font> <a href="login_page.php"><u><b>Login</b></u></a><br><br><br><br>
-	</center>  
-
+<center>
+    <main class="form-signin w-100 m-auto">
+      <form action="register_page.php" method='post'>
+        <img class="mb-4" src="images/user.png" alt="" width="150" height="150"> 
+        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        <?php include('./errors.php'); ?>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" name="first_name" value="<?php echo $first_name;?>" placeholder="nume" required>
+          <label for="floatingInput">Nume</label>
+        </div>
+		<div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" name="last_name" value="<?php echo $last_name;?>" placeholder="prenume" required>
+          <label for="floatingInput">Prenume</label>
+        </div>
+		<div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" name="email" value="<?php echo $email;?>" placeholder="name@example.com" required>
+          <label for="floatingInput">Adresa de e-mail</label>
+        </div>
+		<div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" name="username" value="<?php echo $username;?>" placeholder="nume" required>
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>
+          <label for="floatingInput">Parola</label>
+        </div><br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" name="registerBtn">Register</button>
+      </form>
+      <font size="2.5px" color="black">Ai deja un cont?</font><a href="login_page.php"><u> Login </u></a><br><br>
+    </main>
+</center> 
 </body>
 </html>		
