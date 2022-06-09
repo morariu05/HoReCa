@@ -1,6 +1,7 @@
  <?php
- 	error_reporting(E_ALL);
 	session_start();
+
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 	$server = 'localhost';
 	$user = 'root';
@@ -149,8 +150,12 @@ if (isset($_GET['delete_UnitateHoReCa'])) {
 	header("location:http://localhost/HoReCa/proiect%20final/home.php");
 }
 
+// CONFIRMARE REVIEW
 
-
+if(isset($_POST['trimitere_review_Btn'])){
+    header("location:http://localhost/HoReCa/proiect%20final/user/confirmare_review.php");
+    //exit();
+}
 
 
 
