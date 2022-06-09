@@ -25,6 +25,12 @@
       max-width: 500px;
       padding: 70px;
     }
+    a {
+      color: green;
+    }
+    a:hover{
+      color:black;
+    }
   </style>
 </head>
 <body>
@@ -32,7 +38,7 @@
 <!-- -------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">HoReCa Reviews |</a>
+    <a class="navbar-brand" href="index.php" style="color: green">HoReCa Reviews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,9 +67,10 @@
           <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>
           <label for="floatingInput">parola</label>
         </div><br>
-        <button class="w-100 btn btn-lg btn-primary" type="submit" name="loginBtn">Login</button>
+        <button class="w-100 btn btn-lg btn-success" type="submit" name="loginBtn">Login</button>
       </form>
-      <font size="2.5px" color="black">Nu ai un cont? Creeaza unul </font><a href="register_page.php"><u> aici. </u></a><br><br>
+      <font size="2.5px" color="black">Nu ai un cont? Creeaza unul </font>
+      <a href="register_page.php"><u> aici. </u></a><br><br>
     </main>
 	</center>  
 </body>

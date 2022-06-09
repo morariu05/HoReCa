@@ -9,7 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>Înregistrare Unitate</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
-  <link href="carousel.css" rel="stylesheet">
+  <link href="./css/carousel.css" rel="stylesheet">
   <style type="text/css"> 
     body  {
       margin: 0; 
@@ -44,24 +44,35 @@
   </style>
 </head>
 <body>
+  <?php 
+    if($_SESSION['autentificare'] == false)
+    {
+      header("location:http://localhost/HoReCa/proiect%20final/index.php");
+    }
+  ?>
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand">HoReCa Reviews |</a>
-    <div class="dropdown text-end">
-        <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-			<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
-				<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-				<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-			</svg>
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: green">HoReCa Reviews</a>
+        <div class="dropdown dropstart">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
         </a>
-        <div class="dropdown-menu dropdown-menu-end p-10 text-muted" style="max-width: 300px;">
-			<p style="text-align: center; font-size: 14px;"><u> Your account is: </u></p>
-			<p style="text-align: center; color: #666699"><?php echo $_SESSION['email']; ?></p>
-			<hr>
-			<p style="text-align: center;"><a href="logout.php" style="color: #666699;">Log Out</a></p>
-		</div>
-  </div>
+        <?php
+            $id = $_SESSION['id'];
+            $query = mysqli_query($db, "SELECT * FROM Administrator_Unitate WHERE id_Administrator = '$id'");
+            $result = mysqli_fetch_assoc($query);
+        ?>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
+            <li><a class="dropdown-item disabled" style="text-align:center" href="#"><?php echo $result['nume']." ".$result['prenume'];?></a></li>
+            <li><a class="dropdown-item" href="user.php" style="text-align:center;font-size: 13px;">Vezi profilul tau &raquo;</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="logout.php" style="text-align:center; font-size: 14px;">Deconectare</a></li>
+        </ul>
+        </div>
+    </div>
 </nav>
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <center>
@@ -89,7 +100,7 @@
 <div class="row featurette">
   <div class="col-md-6">
     <h2 class="featurette-heading">Criterii prestabilite.</h2>
-    <p class="lead">Criteriile prestabilite sunt acele criterii pentru care orice Unitate înregistrată va fi evaluată de către clienți pentru a ajuta la o filtrare mai eficientă.</p>
+    <p class="lead">Criteriile prestabilite sunt acele criterii pentru care orice Unitate înregistrată va fi evaluată de către clienți pentru a ajuta la o filtrare mai eficientă a rezultatelor.</p>
   </div>
   <div class="col-md-6">
     <?php
@@ -126,7 +137,7 @@
   <h2 class="featurette-heading">Criterii opționale.</h2>
   <p class="lead">Criteriile opționale pentru review vor fi adăugate în funcție de fiecare Unitate care se dorește a fi evaluată, pe baza facilităților de care asteasta dispune. </p><br><br><br>
 
-<form action="criterii_review.php" method='post'>
+<form action="home.php" method='post'>
   <div class="row featurette">
     <div class="col-md-12">
       <table class="table table-striped">
@@ -154,7 +165,7 @@
       </table><br><br>
     </div>
   </div><br>
-  <button class="w-100 btn btn-lg btn-primary" type="submit" name="Inregistreaza">Înregistrare</button><br>
+  <button class="w-100 btn btn-lg btn-success" type="submit" name="Inregistreaza">Înregistrare</button><br>
 </form>
 </center> 
 </body>

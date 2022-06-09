@@ -8,7 +8,7 @@
 	$dbs = 'HoReCa';
 	$errors = array(); 
 
-// connect to the database
+// conectare la baza de date
 	$db = mysqli_connect($server, $user, $pass, $dbs);
 
 // REGISTER USER
@@ -60,8 +60,8 @@
 					  VALUES('$first_name', '$last_name', '$email', '$username', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['email'] = $email;
-			$_SESSION['success'] = "Autentificat cu succes!";
-			header('location:home.php');
+			$_SESSION['autentificare'] = true;
+			header('location:login_page.php');
 		}
 	}
 
@@ -78,8 +78,8 @@
 			if ($user_id) {
 			  $_SESSION['email'] = $email;
 			  $_SESSION['id'] = $user_id['id_Administrator'];
-			  $_SESSION['success'] = "Autentificat cu succes!";
-			  header("location:http://localhost/HoReCa/proiect%20final/horeca.php");
+			  $_SESSION['autentificare'] = true;
+			  header("location:http://localhost/HoReCa/proiect%20final/home.php");
 			}else {
 				array_push($errors, "email-ul/username-ul sau parola sunt incorecte!");
 			}
@@ -125,25 +125,37 @@
 			header("location:http://localhost/HoReCa/proiect%20final/criterii_review.php?tip_unitate=$tip_unitate");
 		}
 	}
+
 // CRITERII
+	if(isset($_POST['Inregistreaza'])){
 
+		if(!empty($_POST['criteriu'])) {
+			$unitate_id = $_SESSION['id_Unitate'];
+			foreach($_POST['criteriu'] as $value){
+				$query = "INSERT INTO Facilități_Unitate (id_UnitateHoReCa, id_Facilitate) 
+							VALUES('$unitate_id', '$value')";
+				mysqli_query($db, $query);
+			}
+		}
+	}
 
-if(isset($_POST['Inregistreaza'])){
+// AFISARE
 
-    if(!empty($_POST['criteriu'])) {
-		$unitate_id = $_SESSION['id_Unitate'];
-        foreach($_POST['criteriu'] as $value){
-			$query = "INSERT INTO Facilități_Unitate (id_UnitateHoReCa, id_Facilitate) 
-						VALUES('$unitate_id', '$value')";
-			mysqli_query($db, $query);
-        }
-    }
+if (isset($_GET['delete_UnitateHoReCa'])) {
+	$id = $_GET['delete_UnitateHoReCa'];
+	//$unitate_id = $_SESSION['id_Unitate'];
+			
+	mysqli_query($db, "DELETE FROM Unitate_HoReCa WHERE id_UnitateHoReCa=$id");
+	header("location:http://localhost/HoReCa/proiect%20final/home.php");
 }
 
 
 
-// TASK
 
+
+
+// TASK
+/*
 	if (isset($_POST['addTaskBtn'])) {
 		if (empty($_POST['task'])) {
 			$errors = "You must fill in the task";
@@ -155,11 +167,11 @@ if(isset($_POST['Inregistreaza'])){
 		}
 	}
 
-	if (isset($_POST['deleteTaskBtn'])) {
-		$id = $_GET['del_task'];
-		$tip_unitate = $_SESSION['tip_unitate'];
-		
-		mysqli_query($db, "DELETE FROM Criterii_review WHERE id=$id");
-		header("location:http://localhost/HoReCa/proiect%20final/inregistrare_unitate.php?tip_unitate=$tip_unitate");
-	}
+	if (isset($_POST['btn_stergeUnitate'])) {
+		$id = $_GET['delete_UnitateHoReCa'];
+		//$unitate_id = $_SESSION['id_Unitate'];
+				
+		mysqli_query($db, "DELETE FROM Unitate_HoReCa WHERE id=$id");
+		header("location:http://localhost/HoReCa/proiect%20final/home.php");
+	}*/
 ?>
