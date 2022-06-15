@@ -94,7 +94,8 @@
             
             <div class="row featurette">
               <div class="col-md-6">
-                <h2 class="f-heading">Criterii prestabilite.</h2><br>
+                <h2 class="f-heading">Criterii prestabilite</h2>
+                <p> 1 - 10 </p><br>
                 <table class="table table-striped">
                   <tbody>
                     <tr>
@@ -105,7 +106,17 @@
                       ?>
                       <td></td>
                       <td><p><?php echo $row['numeTipReview'];?></p></td>
-                      <td></td>
+                      <td> 
+                        <?php
+                          $id_TipReview = $row['id_TipReview'];
+                          $query_medie = mysqli_query($db, "SELECT AVG(valoare_tip_review) FROM Review_Obligatoriu WHERE id_TipReview = '$id_TipReview' ");
+                          $medie = mysqli_fetch_array($query_medie);
+                          if($medie == null){
+                            $medie = 0;
+                          }
+                          echo number_format((float)$medie[0], 2, '.', '');  // Outputs -> 105.00  
+                        ?>
+                      </td>
                     </tr>
                     <?php $i++; } ?>
                   </tbody>
@@ -113,7 +124,8 @@
               </div>
                 
               <div class="col-md-6">
-                <h2 class="featurette-heading">Criterii optionale.</h2>
+                <h2 class="f-heading">Criterii optionale</h2>
+                <p> 0 - 10 </p><br>
                 <table class="table table-striped">
                   <tbody>
                     <tr>
@@ -124,12 +136,46 @@
                       ?>
                       <td></td>
                       <td><p><?php echo $row['nume_Facilitate'];?></p></td>
-                      <td></td>
+                      <td>
+                      <?php
+                          $id_facilitate = $row['id_Facilitate'];
+                          $query_medie = mysqli_query($db, "SELECT AVG(valoare_review_facilitate) FROM Review_Facilități WHERE id_Facilitate = '$id_facilitate' ");
+                          $medie = mysqli_fetch_array($query_medie);
+                          if($medie == NULL){
+                            $medie = 0;
+                          }
+                          echo number_format((float)$medie[0], 2, '.', '');  // Outputs -> 105.00  
+                        ?>
+                      </td>
                     </tr>
                     <?php $i++; } ?>
                   </tbody>
                 </table><br>
               </div>
+            </div>
+            
+            <div class="container px-4 py-5" id="hanging-icons">
+              <h2 class="f-heading">Comentarii</h2><br>
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                  <?php 
+                    $query = mysqli_query($db, "SELECT * FROM Review WHERE id_UnitateHoReCa = $unitate[id_UnitateHoReCa]");
+                    $i = 1; 
+                    while ($row = mysqli_fetch_array($query)) { 
+                      if($row['impresii_generale']){
+                  ?>
+                    <?php
+                      $query_nume = mysqli_query($db, "SELECT Reviewer.nume FROM Review INNER JOIN Reviewer ON Review.id_Reviewer = Reviewer.id_Reviewer AND Review.id_UnitateHoReCa = $unitate[id_UnitateHoReCa] AND Review.impresii_generale != '';");
+                      $nume = mysqli_fetch_array($query_nume);
+                    ?>
+              
+                  <div class="d-flex justify-content-center">
+                    <p><?php echo $row['data_actuala']; ?></p>
+                    <h3><?php echo $nume[0];?></h3>
+                    <p><?php echo $row['impresii_generale'];?></p>
+                  </div><br>
+                  <?php $i++; }} ?>
+              </div>
+            </div>
         </center>
     </div>
 </div>
