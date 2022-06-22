@@ -49,7 +49,6 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
 <?php
-  $id = $_SESSION['id'];
   $unit = $_GET['id_UnitateHoReCa'];
 
   $query_unitate = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_UnitateHoReCa = $unit");
@@ -58,20 +57,21 @@
   $query_review = mysqli_query($db, "SELECT * FROM Review WHERE id_UnitateHoReCa = $unit");
   $row = mysqli_fetch_array($query_review);
 
-  $query_nume = mysqli_query($db, "SELECT Reviewer.nume FROM Review INNER JOIN Reviewer ON Review.id_Reviewer = Reviewer.id_Reviewer AND Review.id_UnitateHoReCa = $unit");
-  $nume = mysqli_fetch_array($query_nume);
+  $nume = $_GET['nume_reviewer'];
+  $comentariu = $_GET['comentariu'];
+  $valoare_review = $_GET['total'];
 ?>
 
 <div class="b-example-divider"></div> 
 <div class="b-example-divider"></div>
 
-<h2 class="f-heading"> Salutare <b><i><?php echo $nume['nume'];?></i></b>,</h2><br>
+<h2 class="f-heading"> Salutare <b><i><?php echo $nume;?></i></b>,</h2><br>
 
 <div class="comm">
   <p class="lead">mulțumim pentru review!</p><br>
 
-  <p class="lead">Punctajul acordat pentru <i><b> <?php echo $unitate['nume']?> </b></i> este unul de: ??? </p>
-  <p class="lead c">alături de comentariul: <i><b> <?php echo $row['impresii_generale'];?> </b></i></p><br><br><br>
+  <p class="lead">Punctajul acordat pentru <i><b> <?php echo $unitate['nume']?> </b></i> este unul de: <?php echo $valoare_review;?>/10, </p>
+  <p class="lead c">alături de comentariul: <i><b> <?php echo $comentariu;?> </b></i></p><br><br><br>
 
   <a href="../index.php"><button type="button" class="btn btn-outline-dark round-pill">Revino la pagina principală</button></a>
 </div><br><br><br>

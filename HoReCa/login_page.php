@@ -56,12 +56,12 @@
 	<center>
     <main class="form-signin w-100 m-auto">
       <form action="login_page.php" method='post'>
-        <img class="mb-4" src="images/user.png" alt="" width="150" height="150"> 
+        <img class="mb-4" src="images/users.png" alt="" width="150" height="150"> 
         <h1 class="h3 mb-3 fw-normal">Autentificare</h1>
         <?php include('./errors.php'); ?>
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
-          <label for="floatingInput">e-mail sau username</label>
+          <label for="floatingInput">e-mail sau nume de utilizator</label>
         </div>
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>

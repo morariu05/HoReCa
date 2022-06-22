@@ -24,7 +24,7 @@
       margin-top: 0;
       margin-bottom: 1px;
     }
-    img {
+    .imgUser{
       max-width: 10%;
       height: auto;
     }
@@ -38,39 +38,39 @@
     }
   ?>
 <!-- ---------------------------------------------------------------------------------------------------- -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: gray">HoReCa Reviews</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" style="color: gray">HoReCa Reviews</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link active text-success" aria-current="page" href="home.php">Home</a>
-                </li>
-            </ul>
-        </div>
-        <div class="dropdown dropstart">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-success" aria-current="page" href="home.php">Home</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown dropstart">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg>
+          </svg>
         </a>
         <?php
-            $id = $_SESSION['id'];
-            $query = mysqli_query($db, "SELECT * FROM Administrator_Unitate WHERE id_Administrator = '$id'");
-            $result = mysqli_fetch_assoc($query);
+          $id = $_SESSION['id'];
+          $query = mysqli_query($db, "SELECT * FROM Administrator_Unitate WHERE id_Administrator = '$id'");
+          $result = mysqli_fetch_assoc($query);
         ?>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
-            <li><a class="dropdown-item disabled" style="text-align:center" href="#"><?php echo $result['nume']." ".$result['prenume'];?></a></li>
-            <li><a class="dropdown-item" href="user.php" style="text-align:center;font-size: 13px;">Vezi profilul tau &raquo;</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="logout.php" style="text-align:center; font-size: 14px;">Deconectare</a></li>
+          <li><a class="dropdown-item disabled" style="text-align:center" href="#"><?php echo $result['nume']." ".$result['prenume'];?></a></li>
+          <li><a class="dropdown-item" href="user.php" style="text-align:center;font-size: 13px;">Vezi profilul tau &raquo;</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="logout.php" style="text-align:center; font-size: 14px;">Deconectare</a></li>
         </ul>
-        </div>
+      </div>
     </div>
-</nav>
+  </nav>
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
 <center><br><br><br>
@@ -237,7 +237,7 @@
             <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
             <p><?php echo $row['impresii_generale'];?></p>
             <div class="d-flex align-items-center">
-              <img src="./images/users.png">
+              <img src="./images/users.png" class="imgUser">
               <div class="ps-3">
                 <h6 class="mb-1"><?php echo $nume[0];?></h6>
                 <small><?php echo $row['data_actuala']; ?></small>

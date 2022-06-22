@@ -54,7 +54,7 @@
 <center>
     <main class="form-signin w-100 m-auto">
       <form action="register_page.php" method='post'>
-        <img class="mb-4" src="images/user.png" alt="" width="150" height="150"> 
+        <img class="mb-4" src="images/users.png" alt="" width="150" height="150"> 
         <h1 class="h3 mb-3 fw-normal">Înregistrare</h1>
         <?php include('./errors.php'); ?>
         <div class="form-floating">
@@ -71,7 +71,7 @@
         </div>
 		<div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" name="username" value="<?php echo $username;?>" placeholder="nume" required>
-          <label for="floatingInput">Username</label>
+          <label for="floatingInput">Nume de utilizator</label>
         </div>
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>

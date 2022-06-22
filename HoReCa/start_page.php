@@ -28,12 +28,11 @@
 </head>
 <body style="padding: 0;">
     <div>
-        <!-- Navbar & Hero Start -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.php" class="navbar-brand p-0">
                     <h1 class="m-0">HoReCa Reviews</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -45,31 +44,27 @@
                     <a href="login_page.php" class="btn btn-light rounded-pill text-success py-2 px-4 ms-lg-5">Intră în cont</a>
                 </div>
             </nav>
-
 			<div class="container-xxl bg-dark hero-header">
 				<div class="container">
 					<div class="col-lg-7 text-center text-lg-start">
 						<h1 class="featurette-heading text-success mb-5 animated zoomIn">Vezi ce spun clienții noștri!</h1>
-						<p class="lead text-success pb-3 animated zoomIn">Jobul tău este de a administra Unități HoReCa? Perfect! Acesta este site-ul potrivit pentru a-ți ușura munca! Creează cont, înregistrează Unitățile și pe baza review-urilor lăsate de clienții care v-au trecut pragul, poți contribui la îmbunătățirea calității serviciilor și crește tot mai mult popularitatea Unității tale!</p>
+						<p class="lead text-success pb-3 animated zoomIn">Jobul tău este de a administra Unități HoReCa? Perfect! Acesta este site-ul potrivit pentru a-ți ușura munca! Creează cont, înregistrează Unitățile, iar pe baza review-urilor lăsate de clienții care v-au trecut pragul, 
+                            putem evidenția calitatea serviciilor pe care le transformăm în avantaje strategice!</p>
 						<a href="register_page.php" class="btn btn-outline-success rounded-pill border-2 py-3 px-5 animated slideInRight">Creează cont</a>
 					</div>
 			    </div>
 			</div>
-        </div>
-		
-        <!-- Navbar & Hero End -->
+        </div><br><br>
+		<!-- -------------------------------------------------------------------------------------------------- -->
 
-
-        <!-- Features Start -->
         <div class="container-xxl">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-inline-block border rounded-pill text-success px-4 mb-3">Caracteristici</div>
-                        <h2 class="mb-4">De ce ne aleg oamenii pe noi?</h2>
-                        <p>Clita nonumy sanctus nonumy et clita tempor, et sea amet ut et sadipscing rebum amet takimata amet, sed accusam eos eos dolores dolore et. Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
-                        <p>Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
-                        <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                        <h2 class="mb-4">De ce să ne alegi pe noi?</h2>
+                        <p>Pentru o statistică detaliată a calității serviciilor puse la dispoziție pentru clienți de către Hoteluri, Restaurante sau Cafenele, pentru monitorizarea acestora și pentru aducerea în față a ceea este mai bun în acest context.</p>
+                        <p>Preluăm valoarea review-urilor si părerea clienților despre fiecare Unitate în parte, calculăm o medie și ti-o comunicăm în scopul îmbunătățirii serviciilor.</p>
                     </div>
                     <div class="col-lg-7">
                         <div class="row g-5">
@@ -78,62 +73,43 @@
                                     <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
                                         <i class="fa fa-cubes text-white"></i>
                                     </div>
-                                    <h6 class="mb-0">Best In Industry</h6>
+                                    <h6 class="mb-0">Unic În Industria HoReCa</h6>
                                 </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
+                                <span>Oferim un serviciu unic și complex de statistică, un serviciu prietenos totodată pentru utilizatori</span>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
                                         <i class="fa fa-percent text-white"></i>
                                     </div>
-                                    <h6 class="mb-0">99% Success Rate</h6>
+                                    <h6 class="mb-0">99% Rată de Succes</h6>
                                 </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
+                                <span>În 99% din cazuri ajutăm la creșterea unei Unități pe piața HoReCa</span>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
                                         <i class="fa fa-award text-white"></i>
                                     </div>
-                                    <h6 class="mb-0">Award Winning</h6>
+                                    <h6 class="mb-0">Client Fericit</h6>
                                 </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
-                                        <i class="fa fa-smile-beam text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">100% Happy Client</h6>
-                                </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
+                                <span>Odată ce calitatea serviciilor este îmbunătățită, și clienții sunt fericiți!</span>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
                                         <i class="fa fa-user-tie text-white"></i>
                                     </div>
-                                    <h6 class="mb-0">Professional Advisors</h6>
-                                </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-success rounded-circle me-3">
-                                        <i class="fa fa-headset text-white"></i>
-                                    </div>
                                     <h6 class="mb-0">24/7 Customer Support</h6>
                                 </div>
-                                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
+                                <span>Dacă întâmpini dificultăți în procesul de gestionare a Unității tale în ceea ce privește site-ul nostru, ne poti contacta oricând. Mereu va fi cineva acolo să te ajute!</span>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Features End -->
+        </div><br><br><br>
 
-        <!-- Testimonial Start -->
         <div class="container-xxl py-4 px-4 comm">
             <div id="carouselExampleCaptions" class="carousel slide carousel-multi-item" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
@@ -217,9 +193,8 @@
                 </div>
             </div>
         </div><br><br><br><br><br>
-        <!-- Testimonial End -->
 
-        <!-- Footer Start -->
+        <!-- Footer -------------------------------------------------------------------------------------------------- -->
         <div class="container-fluid bg-dark text-light footer pt-3">
             <div class="container py-2">
                 <div class="row g-4">
@@ -258,7 +233,7 @@
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
-</div>
+        <!-- -------------------------------------------------------------------------------------------------- -->
+    </div>
 </body>
 </html>		

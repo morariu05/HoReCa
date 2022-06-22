@@ -40,7 +40,7 @@
 </head>
 <body style="padding: 0;">
     <div>
-        <!-- Navbar & Hero Start -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.php" class="navbar-brand p-0">
@@ -69,9 +69,8 @@
 			    </div>
 			</div>
         </div><br><br>
-        <!-- Navbar & Hero End -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
 
-        <!-- Features Start -->
         <div class="container-xxl">
             <div class="container">
                 <div class="row g-5">
@@ -106,9 +105,7 @@
                 </div>
             </div>
         </div><br><br><br><br>
-        <!-- Features End -->
 
-        <!-- Testimonial Start -->
         <div class="container-xxl py-4 px-4 comm">
             <div id="carouselExampleCaptions" class="carousel slide carousel-multi-item" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
@@ -192,9 +189,8 @@
                 </div>
             </div>
         </div><br><br><br><br><br>
-        <!-- Testimonial End -->
 
-        <!-- Footer Start -->
+        <!-- Footer -------------------------------------------------------------------------------------------------- -->
         <div class="container-fluid bg-dark text-light footer pt-3">
             <div class="container py-2">
                 <div class="row g-4">
@@ -232,7 +228,7 @@
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
     </div>
 </body>
 </html>		

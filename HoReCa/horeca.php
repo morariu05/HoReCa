@@ -80,58 +80,37 @@
     </div>
 </nav>
 <!-- ---------------------------------------------------------------------------------------------------- -->
-<!--<center>
-  
-  <a href="inregistrare_unitate.php?tip_unitate=1">
-    <svg width="400" height="800">
-      <rect x="35" y="200" rx="10" ry="10" width="350" height="350" style="fill:#466d6d;stroke:#4e7e7e;stroke-width:5;opacity:0.9" />
-      <text x="120" y="420" style="fill:#d0e1e1;">Ho</text>
-    </svg>
-  </a>
-  <a href="inregistrare_unitate.php?tip_unitate=2">
-    <svg width="400" height="800">
-      <rect x="30" y="200" rx="10" ry="10" width="350" height="350" style="fill:#466d6d;stroke:#4e7e7e;stroke-width:5;opacity:0.9" />
-      <text x="110" y="420" style="fill:#d0e1e1;">Re</text>
-    </svg>
-  </a>
-  <a href="inregistrare_unitate.php?tip_unitate=3">
-    <svg width="400" height="800">
-      <rect x="25" y="200" rx="10" ry="10" width="350" height="350" style="fill:#466d6d;stroke:#4e7e7e;stroke-width:5;opacity:0.9" />
-      <text x="100" y="420" style="fill:#d0e1e1;">Ca</text>
-    </svg>
-  </a>
-</center>-->
 <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="inregistrare_unitate.php?tip_unitate=1">
-                            <div class="card w-100 card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/hotel.jpg'); background-size: 101%; background-repeat: no-repeat; background-position: center;">
-                                <div class="d-flex flex-column h-100 p-5 pb-3 text-muted text-shadow-1">
-                                    <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Hotel</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="inregistrare_unitate.php?tip_unitate=2">
-                            <div class="card card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/restaurant.jpg'); background-size: 101%; background-repeat: no-repeat; background-position: -1px 70%;">
-                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                                    <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Restaurant</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="inregistrare_unitate.php?tip_unitate=3">
-                            <div class="card card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/cafenea.jpg'); background-size: 102%; background-repeat: no-repeat; background-position: -1px -1px;">
-                                <div class="d-flex flex-column h-100 p-5 pb-3 text-muted text-shadow-1">
-                                    <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Cafenea</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <a href="inregistrare_unitate.php?tip_unitate=1">
+        <div class="card w-100 card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/hotel.jpg'); background-size: 101%; background-repeat: no-repeat; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-muted text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Hotel</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <a href="inregistrare_unitate.php?tip_unitate=2">
+        <div class="card card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/restaurant.jpg'); background-size: 101%; background-repeat: no-repeat; background-position: -1px 70%;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Restaurant</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <a href="inregistrare_unitate.php?tip_unitate=3">
+        <div class="card card-cover h-100 overflow-hidden text-white text-center bg-dark rounded-3 shadow-lg" style="background-image: url('./images/cafenea.jpg'); background-size: 102%; background-repeat: no-repeat; background-position: -1px -1px;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-muted text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-4 lh-1 fw-bold">Cafenea</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>		
