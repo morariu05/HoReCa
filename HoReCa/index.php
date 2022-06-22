@@ -127,7 +127,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <i class="fa fa-quote-left fa-2x text-warning mb-3"></i>
-                                <p>Promptitudinea raspunsului la doleanțele noastre. Personal amabil. Curatenia!</p>
+                                <p>Mâncarea este excelentă! Există o gamă foarte variată de feluri de mâncare bune din care poți alege, fie ca esti vegetarian sau vegan. Atmosfera! Am găsit cu greu un loc de parcare liber..totuși, Recomand!</p>
                                 <div class="d-flex align-items-center">
                                     <img src="./images/users.png">
                                     <div class="ps-3">
@@ -175,7 +175,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <i class="fa fa-quote-left fa-2x text-warning mb-3"></i>
-                                <p>Mâncare bună, camere foarte mari, curățenie fără nimic de reproșat, personalul foarte amabil. Piscina cu apă încalzită, nu foarte mare dar ok pentru o balaceală de relaxare./p>
+                                <p>Mâncare bună, camere foarte mari, curățenie fără nimic de reproșat, personalul foarte amabil. Piscina cu apă încalzită, nu foarte mare dar ok pentru o balaceală de relaxare.</p>
                                 <div class="d-flex align-items-center">
                                     <img src="./images/users.png">
                                     <div class="ps-3">

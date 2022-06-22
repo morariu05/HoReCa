@@ -111,6 +111,7 @@
 			}
 		}
 		if($telefon){
+
 			if (!preg_match("/^[0-9]*$/", $telefon)) {
 				array_push($errors, "În câmpul TELEFON, numai cifrele sunt permise!");
 			}
@@ -118,11 +119,12 @@
 
 		// daca nu sunt erori in form, se face inregistrarea
 		if (count($errors) == 0) {
-			$tip_unitate = $_SESSION['tip_unitate'];
+			$tip_unitate = $_GET['tip_unitate'];
 			$user_id = $_SESSION['id'];
 			$query = "INSERT INTO Unitate_HoReCa (nume, descriere, adresa, telefon, email, cod_QR, id_Administrator, id_TipUnitate) 
 						VALUES('$nume', '$descriere', '$adresa', '$telefon', '$email', '1', '$user_id', '$tip_unitate' )";
 			mysqli_query($db, $query);
+			
 			$sql = "SELECT * FROM Unitate_HoReCa WHERE nume='$nume' AND id_Administrator='$user_id' AND id_TipUnitate='$tip_unitate'";
 			$result = mysqli_query($db, $sql);
 			$id_unitate = mysqli_fetch_assoc($result);
@@ -175,7 +177,7 @@ if (isset($_POST['editare_unitate'])) {
 
 // EDITARE USER
 
-if (isset($_POST['editare_unitate'])) {
+if (isset($_POST['editare_user'])) {
 	$nume = mysqli_real_escape_string($db, $_POST['nume']);
 	$prenume = mysqli_real_escape_string($db, $_POST['prenume']);
 	$username = mysqli_real_escape_string($db, $_POST['username']);

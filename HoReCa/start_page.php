@@ -168,7 +168,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
-                                <p>Cafeneaua este modernă, deschisă recent, terasele exterioare sunt spațioase, pet-friendly, diversitate, calitate.”</p>
+                                <p>Cafeneaua este modernă, deschisă recent, terasele exterioare sunt spațioase, pet-friendly, diversitate, calitate.</p>
                                 <div class="d-flex align-items-center">
                                     <img src="./images/users.png">
                                     <div class="ps-3">

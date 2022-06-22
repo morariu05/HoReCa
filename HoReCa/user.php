@@ -156,7 +156,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
-                                                    <button type="submit" name="editare_unitate" class="btn btn-success">Salvează modificările</button>
+                                                    <button type="submit" name="editare_user" class="btn btn-success">Salvează modificările</button>
                                                 </div>
                                                 </form>
                                             </div>
