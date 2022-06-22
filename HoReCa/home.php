@@ -52,9 +52,9 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color: green">HoReCa Reviews</a>
+    <a class="navbar-brand" style="color: gray">HoReCa Reviews</a>
     <ul class="navbar-nav">
-      <li class="nav-item btn btn-outline-success">
+      <li class="nav-item btn btn-outline-success rounded-pill">
         <a class="nav-link" href="horeca.php"> + Adaugă unități</a>
       </li>
     </ul>
@@ -81,12 +81,7 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
 <center>
-
-<div class="b-example-divider"></div>
-
 <h2 class="featurette-heading"> Unități adăugate </h2><br><br>
-
-<div class="b-example-divider"></div>
 
 <div class="container px-4 py-5" id="hanging-icons">
   <h2 class="pb-2 border-bottom" style="text-align: left">Hoteluri</h2> 
@@ -101,7 +96,7 @@
     ?>
     <div class="d-flex justify-content-center">
       <div>
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <img src="<?php echo $row['cod_QR'] ?>" >
         <h2 class="fw-normal"><?php echo $row['nume']?></h2>
         <p><?php echo $row['descriere']?></p>
         <a class="btn btn-outline-success" href="unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
@@ -133,7 +128,7 @@
     ?>
     <div class="d-flex justify-content-center">
       <div>
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <img src="<?php echo $row['cod_QR'] ?>" > 
         <h2 class="fw-normal"><?php echo $row['nume']?></h2>
         <p><?php echo $row['descriere']?></p>
         <a class="btn btn-outline-success" href="unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
@@ -165,8 +160,8 @@
     ?>
     <div class="d-flex justify-content-center">
       <div>
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-      <h2 class="fw-normal"><?php echo $row['nume']?></h2>
+        <img src="<?php echo $row['cod_QR'] ?>" >
+        <h2 class="fw-normal"><?php echo $row['nume']?></h2>
         <p><?php echo $row['descriere']?></p>
         <a class="btn btn-outline-success" href="unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
       </div>

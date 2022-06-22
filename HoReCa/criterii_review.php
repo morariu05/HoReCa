@@ -41,6 +41,9 @@
     .b {
       text-align: right;
     }
+    button{
+      max-width: 70%;
+    }
   </style>
 </head>
 <body>
@@ -53,7 +56,7 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: green">HoReCa Reviews</a>
+        <a class="navbar-brand" style="color: gray">HoReCa Reviews</a>
         <div class="dropdown dropstart">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -77,7 +80,7 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <center>
 
-<div class="col-md-12">
+<div class="col-md-12"><br>
     <h2 class="featurette-heading">
       <?php
         $tip_unitate = $_GET['tip_unitate'];
@@ -165,7 +168,7 @@
       </table><br><br>
     </div>
   </div><br>
-  <button class="w-100 btn btn-lg btn-success" type="submit" name="Inregistreaza">Înregistrare</button><br>
+  <button class="w-100 btn btn-lg btn-success" type="submit" name="Inregistreaza">Înregistrare</button><br><br><hr>
 </form>
 </center> 
 </body>

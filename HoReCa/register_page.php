@@ -37,14 +37,14 @@
 <!-- -------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php" style="color: green">HoReCa Reviews</a>
+    <a class="navbar-brand" href="index.php" style="color: gray">HoReCa Reviews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="login_page.php">Login</a>
+          <a class="nav-link text-success" href="login_page.php">Intră în cont</a>
         </li>
       </ul>
     </div>
@@ -55,7 +55,7 @@
     <main class="form-signin w-100 m-auto">
       <form action="register_page.php" method='post'>
         <img class="mb-4" src="images/user.png" alt="" width="150" height="150"> 
-        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        <h1 class="h3 mb-3 fw-normal">Înregistrare</h1>
         <?php include('./errors.php'); ?>
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" name="first_name" value="<?php echo $first_name;?>" placeholder="nume" required>
@@ -77,10 +77,10 @@
           <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>
           <label for="floatingInput">Parola</label>
         </div><br>
-        <button class="w-100 btn btn-lg btn-success" type="submit" name="registerBtn">Register</button>
+        <button class="w-100 btn btn-lg btn-success" type="submit" name="registerBtn">Creează cont</button>
       </form>
       <font size="2.5px" color="black">Ai deja un cont?</font>
-      <a href="login_page.php"><u>Login </u></a><br><br>
+      <a href="login_page.php"><u>Conectează-te </u></a><br><br>
     </main>
 </center> 
 </body>

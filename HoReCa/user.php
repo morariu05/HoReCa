@@ -20,14 +20,14 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: green">HoReCa Reviews</a>
+        <a class="navbar-brand" style="color: gray">HoReCa Reviews</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                <a class="nav-link active text-success" aria-current="page" href="home.php">Home</a>
                 </li>
             </ul>
         </div>
@@ -77,7 +77,7 @@
                                         	<h6 class="text-muted f-w-400"><?php echo $result['email'];?></h6>
                                         </div>
                                         <div class="col-sm-6">
-                                        	<p class="m-b-10 f-w-600">Username</p>
+                                        	<p class="m-b-10 f-w-600">Nume de utilizator</p>
                                             <h6 class="text-muted f-w-400"><?php echo $result['username'];?></h6>
                                         </div>
                                     </div><br>
@@ -92,18 +92,18 @@
                                             <h6 class="text-muted f-w-400"><?php echo $nrHoteluri;?></h6>
                                         </div>
 										<div class="col-sm-4">
-                                        <?php
-                                            $query = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_Administrator = $_SESSION[id] AND id_TipUnitate = '2'");
-                                            $nrRestaurante = mysqli_num_rows($query);
-                                        ?>
+                                            <?php
+                                                $query = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_Administrator = $_SESSION[id] AND id_TipUnitate = '2'");
+                                                $nrRestaurante = mysqli_num_rows($query);
+                                            ?>
                                             <p class="m-b-10 f-w-600">Restaurante</p>
                                             <h6 class="text-muted f-w-400"><?php echo $nrRestaurante;?></h6>
                                         </div>
                                         <div class="col-sm-4">
-                                        <?php
-                                            $query = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_Administrator = $_SESSION[id] AND id_TipUnitate = '3'");
-                                            $nrCafenele = mysqli_num_rows($query);
-                                        ?>
+                                            <?php
+                                                $query = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_Administrator = $_SESSION[id] AND id_TipUnitate = '3'");
+                                                $nrCafenele = mysqli_num_rows($query);
+                                            ?>
                                         	<p class="m-b-10 f-w-600">Cafenele</p>
                                             <h6 class="text-muted f-w-400"><?php echo $nrCafenele;?></h6>
                                         </div>
@@ -115,13 +115,87 @@
                                             <h6 class="text-muted f-w-400"><?php echo $nrCafenele + $nrRestaurante + $nrHoteluri;?></h6>
                                         </div>
                                         <div class="col-sm-6">
+                                            <?php 
+                                                $query = mysqli_query($db, "SELECT id_Review FROM Review");
+                                                $nrReviews = mysqli_num_rows($query);
+                                            ?>
                                         	<p class="m-b-10 f-w-600">Total reviews</p>
-                                            <h6 class="text-muted f-w-400">4543</h6>
+                                            <h6 class="text-muted f-w-400"><?php echo $nrReviews;?></h6>
                                         </div>
                                     </div>
 									<br><hr><br>
-                                       <button>Editează</button>    
-									   <button>Schimbă parola</button>                       
+                                        <button type="button" class="btn btn-outline-dark round-pill" data-bs-toggle="modal" data-bs-target="#editModal">Editează</button>              
+                                        <button name="schimbare" type="button" class="btn btn-outline-dark round-pill" data-bs-toggle="modal" data-bs-target="#passwdModal">Schimbă parola</button>              
+                                       
+                                       <!-- Modal editare User-->
+                                        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="editModalLabel">Editează profilul</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <form method='post'>
+                                                <div class="modal-body">
+                                                    <div class="form-floating">
+                                                    <input type="text" class="form-control" id="floatingInput" name="nume" value="<?php echo $result['nume'];?>" placeholder="nume">
+                                                    <label for="floatingInput">Nume: </label>
+                                                    </div><br>
+                                                    <div class="form-floating">
+                                                    <input type="text" class="form-control" id="floatingInput" name="prenume" value="<?php echo $result['prenume'];?>" placeholder="prenume">
+                                                    <label for="floatingInput">Prenume: </label>
+                                                    </div><br>
+                                                    <div class="form-floating">
+                                                    <input type="text" class="form-control" id="floatingInput" name="username" value="<?php echo $result['username'];?>" placeholder="username">
+                                                    <label for="floatingInput">Nume de utilizator: </label>
+                                                    </div><br>
+                                                    <div class="form-floating">
+                                                    <input type="email" class="form-control" id="floatingInput" name="email" value="<?php echo $result['email'];?>" placeholder="email">
+                                                    <label for="floatingInput">Email: </label>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                                                    <button type="submit" name="editare_unitate" class="btn btn-success">Salvează modificările</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sfarsit Modal editare User -->
+
+                                        <!-- Modal schimbare parolă-->
+                                        <div class="modal fade" id="passwdModal" tabindex="-1" aria-labelledby="passwdModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="passwdModalLabel">Schimbă parola</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <form method='post'>
+                                                <div class="modal-body">
+                                                    <div class="form-floating">
+                                                    <input type="password" class="form-control" id="floatingInput" name="parola" placeholder="parola">
+                                                    <label for="floatingInput">Parola veche: </label>
+                                                    </div><br>
+                                                    <div class="form-floating">
+                                                    <input type="password" class="form-control" id="floatingInput" name="parolaNoua" placeholder="parolaNoua">
+                                                    <label for="floatingInput">Noua parolă: </label>
+                                                    </div><br>
+                                                    <div class="form-floating">
+                                                    <input type="password" class="form-control" id="floatingInput" name="confirmaParolaNoua" placeholder="confirmaParolaNoua">
+                                                    <label for="floatingInput">Reintroduceți parola nouă: </label>
+                                                    </div><br>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                                                    <button type="submit" name="schimba_parola" class="btn btn-success">Salvează modificările</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sfarsit Modal schimbare parolă -->
                                 </div>
                             </div>
                         </div>

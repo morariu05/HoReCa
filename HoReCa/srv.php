@@ -116,13 +116,20 @@
 		if (count($errors) == 0) {
 			$tip_unitate = $_SESSION['tip_unitate'];
 			$user_id = $_SESSION['id'];
-			$query = "INSERT INTO Unitate_HoReCa (nume, descriere, adresa, telefon, email, cod_QR, id_Administrator, id_TipUnitate, id_Zona) 
-						VALUES('$nume', '$descriere', '$adresa', '$telefon', '$email', '1', '$user_id', '$tip_unitate', '1')";
+			$query = "INSERT INTO Unitate_HoReCa (nume, descriere, adresa, telefon, email, cod_QR, id_Administrator, id_TipUnitate) 
+						VALUES('$nume', '$descriere', '$adresa', '$telefon', '$email', '1', '$user_id', '$tip_unitate' )";
 			mysqli_query($db, $query);
 			$sql = "SELECT * FROM Unitate_HoReCa WHERE nume='$nume' AND id_Administrator='$user_id' AND id_TipUnitate='$tip_unitate'";
 			$result = mysqli_query($db, $sql);
 			$id_unitate = mysqli_fetch_assoc($result);
-			$_SESSION['id_Unitate'] = $id_unitate['id_UnitateHoReCa'];
+			$id_unitate = $id_unitate['id_UnitateHoReCa'];
+
+			// adaugam la unitate link pentru QR API
+			$QR_data = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://localhost/HoReCa/proiect%20final/unitate.php?id_UnitateHoReCa=$id_unitate";
+			
+			mysqli_query($db, "UPDATE Unitate_HoReCa SET cod_QR='$QR_data' WHERE id_UnitateHoReCa='$id_unitate'");
+
+			$_SESSION['id_Unitate'] = $id_unitate;
 			header("location:http://localhost/HoReCa/proiect%20final/criterii_review.php?tip_unitate=$tip_unitate");
 		}
 	}
@@ -140,43 +147,62 @@
 		}
 	}
 
-// AFISARE
+// STERGERE UNITATE
 
 if (isset($_GET['delete_UnitateHoReCa'])) {
 	$id = $_GET['delete_UnitateHoReCa'];
-	//$unitate_id = $_SESSION['id_Unitate'];
 			
 	mysqli_query($db, "DELETE FROM Unitate_HoReCa WHERE id_UnitateHoReCa=$id");
 	header("location:http://localhost/HoReCa/proiect%20final/home.php");
 }
 
-// CONFIRMARE REVIEW
+// EDITARE UNITATE
 
-if(isset($_POST['trimitere_review_Btn'])){
-    header("location:http://localhost/HoReCa/proiect%20final/user/confirmare_review.php");
-    //exit();
+if (isset($_POST['editare_unitate'])) {
+	$nume = mysqli_real_escape_string($db, $_POST['nume']);
+	$descriere = mysqli_real_escape_string($db, $_POST['descriere']);
+	$adresa = mysqli_real_escape_string($db, $_POST['adresa']);
+	$telefon = mysqli_real_escape_string($db, $_POST['telefon']);
+	$email = mysqli_real_escape_string($db, $_POST['email']);
+	$id = $_GET['id_UnitateHoReCa'];
+	
+	mysqli_query($db, "UPDATE Unitate_HoReCa SET nume='$nume', descriere='$descriere', adresa='$adresa', telefon='$telefon', email='$email' WHERE id_UnitateHoReCa='$id';");
 }
 
+// EDITARE USER
 
+if (isset($_POST['editare_unitate'])) {
+	$nume = mysqli_real_escape_string($db, $_POST['nume']);
+	$prenume = mysqli_real_escape_string($db, $_POST['prenume']);
+	$username = mysqli_real_escape_string($db, $_POST['username']);
+	$email = mysqli_real_escape_string($db, $_POST['email']);
+	$id = $_SESSION['id'];
+	
+	mysqli_query($db, "UPDATE Administrator_Unitate SET nume='$nume', prenume='$prenume', username='$username', email='$email' WHERE id_Administrator='$id';");
+}
 
-// TASK
-/*
-	if (isset($_POST['addTaskBtn'])) {
-		if (empty($_POST['task'])) {
-			$errors = "You must fill in the task";
-		}else{
-			$task = $_POST['task'];
-			$sql = "INSERT INTO Criterii_review (nume_Criteriu) VALUES ('$task')";
-			echo "<meta http-equiv='refresh' content='0'>";
-			mysqli_query($db, $sql);
-		}
+// SCHIMBARE PAROLA
+
+if (isset($_POST['schimba_parola'])) {
+	$parola = mysqli_real_escape_string($db, $_POST['parola']);
+	$parolaNoua = mysqli_real_escape_string($db, $_POST['parolaNoua']);
+	$confirmaParolaNoua = mysqli_real_escape_string($db, $_POST['confirmaParolaNoua']);
+	$id = $_SESSION['id'];
+
+	if($parolaNoua == $confirmaParolaNoua){
+		mysqli_query($db, "UPDATE Administrator_Unitate SET parola='$parolaNoua' WHERE id_Administrator='$id';");
 	}
+	else{
+		echo 'EROARE! Parolele nu sunt identice!';
+	}
+}
 
-	if (isset($_POST['btn_stergeUnitate'])) {
-		$id = $_GET['delete_UnitateHoReCa'];
-		//$unitate_id = $_SESSION['id_Unitate'];
-				
-		mysqli_query($db, "DELETE FROM Unitate_HoReCa WHERE id=$id");
-		header("location:http://localhost/HoReCa/proiect%20final/home.php");
-	}*/
+// CONFIRMARE REVIEW
+/*
+if(isset($_POST['trimitere_review_Btn'])){
+    header("location:http://localhost/HoReCa/proiect%20final/user/confirmare_review.php");
+    exit();
+}
+*/
+
 ?>

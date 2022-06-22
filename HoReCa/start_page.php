@@ -5,10 +5,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 	<title>HoReCa Reviews</title>
 	<link href="./css/prezentare.css" rel="stylesheet">
-	<link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="./css/animate.min.css" rel="stylesheet">
+    <style>
+        .featurette-heading {
+            font-weight: 250;
+            line-height: 1;
+            letter-spacing: -.05rem;
+            padding-top: 0%;
+        }
+        .featurette-heading {
+            font-size: 50px;
+        }
+        img {
+            max-width: 10%;
+            height: auto;
+        }
+    </style>
 </head>
 <body style="padding: 0;">
     <div>
@@ -24,18 +40,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                            <a href="register_page.php" class="nav-item nav-link">Creează cont</a>
+                            <a href="register_page.php" class="nav-item nav-link text-success">Creează cont</a>
                     </div>
                     <a href="login_page.php" class="btn btn-light rounded-pill text-success py-2 px-4 ms-lg-5">Intră în cont</a>
                 </div>
             </nav>
 
-			<div class="container-xxl bg-success hero-header">
+			<div class="container-xxl bg-dark hero-header">
 				<div class="container">
-					<div class="col-lg-6 text-center text-lg-start">
-						<h1 class="text-white mb-5 animated zoomIn">Pagina de start pentru administrator</h1>
-						<p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-						<a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
+					<div class="col-lg-7 text-center text-lg-start">
+						<h1 class="featurette-heading text-success mb-5 animated zoomIn">Vezi ce spun clienții noștri!</h1>
+						<p class="lead text-success pb-3 animated zoomIn">Jobul tău este de a administra Unități HoReCa? Perfect! Acesta este site-ul potrivit pentru a-ți ușura munca! Creează cont, înregistrează Unitățile și pe baza review-urilor lăsate de clienții care v-au trecut pragul, poți contribui la îmbunătățirea calității serviciilor și crește tot mai mult popularitatea Unității tale!</p>
+						<a href="register_page.php" class="btn btn-outline-success rounded-pill border-2 py-3 px-5 animated slideInRight">Creează cont</a>
 					</div>
 			    </div>
 			</div>
@@ -49,8 +65,8 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-inline-block border rounded-pill text-success px-4 mb-3">Features</div>
-                        <h2 class="mb-4">Why People Choose Us? We Are Trusted & Award Wining Agency</h2>
+                        <div class="d-inline-block border rounded-pill text-success px-4 mb-3">Caracteristici</div>
+                        <h2 class="mb-4">De ce ne aleg oamenii pe noi?</h2>
                         <p>Clita nonumy sanctus nonumy et clita tempor, et sea amet ut et sadipscing rebum amet takimata amet, sed accusam eos eos dolores dolore et. Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
                         <p>Et ea ea dolor rebum invidunt clita eos. Sea accusam stet stet ipsum, sit ipsum et ipsum kasd</p>
                         <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href="">Read More</a>
@@ -112,108 +128,122 @@
                                 <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- Features End -->
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-6">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-success px-4 mb-3">Testimonial</div>
-                    <h2 class="mb-5">What Our Clients Say!</h2>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
+        <div class="container-xxl py-4 px-4 comm">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-multi-item" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                        <h2 class="mb-5">Părerea Clienților</h2>
+                    </div><br>
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Camera curata, terasa mare, mic dejun gustos și diversificat, personalul foarte amabil și zâmbitor.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Maria</h6>
+                                        <small>2021-05-11</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Personalul, locația, facilitățile, amplasarea de nota 10.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Mircea</h6>
+                                        <small>2021-12-30</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Personal amabil și atmosferă excelentă. Micul dejun este super iar servirea ireproșabilă.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Lăcrămioara</h6>
+                                        <small>2022-03-03</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Locație și atmosferă excelentă! Cafeaua este cea mai bună din oraș! La fel și raportul preț/calitate. </p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Mara</h6>
+                                        <small>2022-06-12</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Cafeneaua este modernă, deschisă recent, terasele exterioare sunt spațioase, pet-friendly, diversitate, calitate.”</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Cipri</h6>
+                                        <small>2022-02-01</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
+                            <div class="col-lg-4">
+                                <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                                <p>Mâncare bună, camere foarte mari, curățenie fără nimic de reproșat, personalul foarte amabil. Piscina cu apă încalzită, nu foarte mare dar ok pentru o balaceală de relaxare.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="./images/users.png">
+                                    <div class="ps-3">
+                                        <h6 class="mb-1">Simona</h6>
+                                        <small>2021-11-20</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br><br><br><br><br>
         <!-- Testimonial End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-2 wow fadeIn" data-wow-delay="0.1s" >
+        <div class="container-fluid bg-dark text-light footer pt-3">
             <div class="container py-2">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <div class="row g-4">
+                    <div class="col-md-4 col-lg-5">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Avram, Târgu Mureș, România</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+4072 345 678</p>
+                        <p><i class="fa fa-envelope me-3"></i>horeca@reviews.com</p>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <h5 class="text-white mb-4">Review Unități HoReCa</h5>
+                        <a class="btn btn-link" href="index.php">Start</a>
+                        <a class="btn btn-link" href="http://localhost/HoReCa/proiect%20final/user/unitati.php?tip_unitate=1">Hoteluri</a>
+                        <a class="btn btn-link" href="http://localhost/HoReCa/proiect%20final/user/unitati.php?tip_unitate=2">Restaurante</a>
+                        <a class="btn btn-link" href="http://localhost/HoReCa/proiect%20final/user/unitati.php?tip_unitate=3">Cafenele</a>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <h5 class="text-white mb-4">Rețele de socializare</h5>
+                        <p>Acum ne puteți găsi chiar și pe aceste rețele sociale</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Quick Link</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Popular Link</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-success fs-4"></i></button>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -222,41 +252,13 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
+                            &copy; <a class="border-bottom" href="#">HoReCa Reviews</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-   
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
 </div>
 </body>
 </html>		

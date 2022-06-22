@@ -40,7 +40,7 @@
     transform: scale(1.1);
   }
   img {
-    max-width: 30%;
+    max-width: 40%;
     height: auto;
   }
   </style>
@@ -61,34 +61,20 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
 <center>
-
-<?php 
-    $titlu = $_GET['tip_unitate'];
-    $sql = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_TipUnitate = $titlu;"); 
-    if($titlu == 1){
-        $titlu = 'Hoteluri';
-        $imagine = "../images/hotel.png";
-    }else if($titlu == 2){
-        $titlu = 'Restaurante';
-        $imagine = "../images/restaurant.png";
-    }else{
-        $titlu = 'Cafenele';
-        $imagine = "../images/coffee-shop.png";
-    }
-?>
 <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom" style="text-align: left"><?php echo $titlu ?></h2> 
+    <?php $sql = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_TipUnitate = 1;");?>
+    <h2 class="pb-2 border-bottom" style="text-align: left">Hoteluri</h2> 
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">   
         <?php
         $i = 1; 
         if(mysqli_num_rows($sql) == 0){
-            echo '<h5> Nu există unități de afișat. </h5>'; 
+            echo '<h5> Nu există hoteluri de afișat. </h5>'; 
         }
         while ($row = mysqli_fetch_array($sql)) { 
         ?>
         <div class="d-flex justify-content-center">
         <div>
-            <img src="<?php echo $imagine?>">
+            <img src="../images/hotel.png" >
             <h2 class="fw-normal"><?php echo $row['nume']?></h2>
             <p><?php echo $row['descriere']?></p>
             <a class="btn btn-outline-dark text-warning" href="review-unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
@@ -99,5 +85,56 @@
 </div>
 
 <div class="b-example-divider"></div>
+
+<div class="container px-4 py-5" id="hanging-icons">
+    <?php $sql = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_TipUnitate = 2;");?>
+    <h2 class="pb-2 border-bottom" style="text-align: left">Restaurante</h2> 
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">   
+        <?php
+        $i = 1; 
+        if(mysqli_num_rows($sql) == 0){
+            echo '<h5> Nu există restaurante de afișat. </h5>'; 
+        }
+        while ($row = mysqli_fetch_array($sql)) { 
+        ?>
+        <div class="d-flex justify-content-center">
+        <div>
+            <img src="../images/restaurant.png">
+            <h2 class="fw-normal"><?php echo $row['nume']?></h2>
+            <p><?php echo $row['descriere']?></p>
+            <a class="btn btn-outline-dark text-warning" href="review-unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
+        </div>
+        </div>
+        <?php $i++; } ?>
+    </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container px-4 py-5" id="hanging-icons">
+    <?php $sql = mysqli_query($db, "SELECT * FROM Unitate_HoReCa WHERE id_TipUnitate = 3;");?>
+    <h2 class="pb-2 border-bottom" style="text-align: left">Cafenele</h2> 
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">   
+        <?php
+        $i = 1; 
+        if(mysqli_num_rows($sql) == 0){
+            echo '<h5> Nu există cafenele de afișat. </h5>'; 
+        }
+        while ($row = mysqli_fetch_array($sql)) { 
+        ?>
+        <div class="d-flex justify-content-center">
+        <div>
+            <img src="../images/coffee-shop.png">
+            <h2 class="fw-normal"><?php echo $row['nume']?></h2>
+            <p><?php echo $row['descriere']?></p>
+            <a class="btn btn-outline-dark text-warning" href="review-unitate.php?id_UnitateHoReCa=<?php echo $row['id_UnitateHoReCa']?>">Vezi mai mult &raquo;</a>
+        </div>
+        </div>
+        <?php $i++; } ?>
+    </div>
+</div>
+
+<div class="b-example-divider"></div>
+
 </body>
 </html>
